@@ -1,16 +1,58 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050915"><title>VOX FREAK AI</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="theme-color" content="#030712"><title>VOX FREAK AI</title>
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
-<div class="app">
-<header class="top glass"><div class="brand"><div class="mark"><i></i><i></i><i></i><i></i><i></i></div><div><h1>VOX FREAK <em>AI</em></h1><small>HUMAN VOICES. HIGHER POTENTIAL.</small></div></div><nav class="nav"><button class="active">⌁ Tune</button><button>≋ Align</button><button>▱ Layers</button><button>✦ AI Assistant</button><button id="export">⇩ Export</button></nav><div class="motto">MUSIC DRIVEN<br><b>BY A BRIGHTER YOU.</b></div></header>
+<div class="shell"><div class="app">
+<header class="top glass">
+  <div class="brand"><div class="mark"><i></i><i></i><i></i><i></i><i></i></div><div><h1>VOX FREAK <em>AI</em></h1><small>HUMAN VOICES. HIGHER POTENTIAL.</small></div></div>
+  <nav class="nav"><button class="active">⌁ Tune</button><button>≋ Align</button><button>▱ Layers</button><button>✦ AI Assistant</button><button id="export">⇩ Export</button></nav>
+  <div class="motto">MUSIC DRIVEN<br><b>BY A BRIGHTER YOU.</b></div>
+</header>
 <div class="layout">
-<aside class="left glass"><div class="title"><span>TRACKS</span><button class="mini" id="add">＋</button></div><input id="file" type="file" accept="audio/*" hidden><div class="tracks" id="tracks"><div class="track active"><span class="dot" style="background:#ff39d7;color:#ff39d7"></span><div><b>Lead Master</b><small>Lead Vocals</small></div><div class="ms"><span>M</span><span>S</span></div></div><div class="track"><span class="dot" style="background:#39e7ff;color:#39e7ff"></span><div><b>Double L</b><small>Vocal Double</small></div><div class="ms"><span>M</span><span>S</span></div></div><div class="track"><span class="dot" style="background:#a855f7;color:#a855f7"></span><div><b>Double R</b><small>Vocal Double</small></div><div class="ms"><span>M</span><span>S</span></div></div><div class="track"><span class="dot" style="background:#76ff3c;color:#76ff3c"></span><div><b>Harmony 1</b><small>Harmony</small></div><div class="ms"><span>M</span><span>S</span></div></div></div><button class="import" id="import">＋ Add Vocal Track</button><section class="card"><h3>GLOBAL TUNING</h3><div class="row"><span>Key</span><b class="pill" id="key">A Minor</b></div><div class="row"><span>Scale</span><b class="pill">Natural Minor</b></div><div class="row"><span>Reference</span><b class="pill">440 Hz</b></div></section><section class="card"><h3>REAL-TIME METERS</h3><div class="row"><span>Input</span><span>-4.2 dB</span></div><div class="meter"><i></i></div><div class="row"><span>Output</span><span>-7.1 dB</span></div><div class="meter"><i style="width:59%"></i></div></section><div class="tag">〰 BETTER VOCALS.<br>  A BRIGHTER TOMORROW.</div></aside>
-<main class="main"><section class="overview glass"><canvas id="overview"></canvas><div class="meta"><small id="filename">No audio loaded</small><b><span id="now">0:00.0</span> / <span id="total">0:00.0</span></b></div></section><section class="editor glass"><div class="editorhead"><div><i class="pink"></i><b>LEAD MASTER</b><small id="notes">0 notes</small></div><div><button class="tool active">⌁</button><button class="tool">✂</button><span>Snap <b>1/16</b></span><span>View <b>Pitch</b></span></div></div><div class="pitchwrap"><canvas id="pitch"></canvas><button class="drop" id="drop"><strong>⇧</strong><h2>Drop a lead vocal here</h2><p>WAV / MP3 / browser-supported audio</p><span>IMPORT VOCAL</span></button></div></section><section class="alignment glass"><div class="alignhead"><b>VOCAL ALIGNMENT</b><button id="align">✦ Auto Align</button></div><div id="alignrows"></div></section><section class="transport glass"><div class="tb"><button id="reset">↶</button><button class="play" id="play">▶</button><button id="stop">■</button></div><div class="time"><b><span id="now2">0:00.0</span> / <span id="total2">0:00.0</span></b><small>BPM 120 · 4/4</small></div><div class="macros"><label>Tune<input id="strength" type="range" min="0" max="100" value="75"><b>75%</b></label><label>Humanize<input type="range" min="0" max="100" value="30"><b>30%</b></label><label>Vibrato<input type="range" min="0" max="100" value="50"><b>50%</b></label><label>Formant<input type="range" min="-12" max="12" value="0"><b>0</b></label></div><div class="presets"><small>PRESETS</small><div class="presetgrid"><button data-p="Natural">〰<span>Natural</span></button><button data-p="Pop Tight">⌁<span>Pop Tight</span></button><button data-p="Trap Glide">〽<span>Trap Glide</span></button><button data-p="Choir Align">♬<span>Choir Align</span></button><button data-p="Transparent">≈<span>Transparent</span></button></div></div></section></main>
-<aside class="right glass"><div class="aihead"><b>◎ AI ASSISTANT</b><span class="online"><i></i>Online</span></div><div class="hero"><h2>Let AI do the heavy lifting.</h2><p>You keep the soul.</p></div><div class="tabs"><b>SUGGESTIONS</b><span>CONTROLS</span><span>ANALYSIS</span></div><div class="analysis"><b>✦ AI analysis</b><small id="status">Ready for a vocal.</small></div><div class="insights" id="insights"><div class="insight"><i></i><div><b>Key detected: A Minor</b><small>92% tonal confidence.</small></div></div><div class="insight"><i></i><div><b>Vibrato is natural</b><small>Preserve expressive modulation.</small></div></div></div><div class="actions"><button id="tune"><span class="ico">✦</span><span><b>AI Tune</b><small>Smart pitch correction</small></span><u>›</u></button><button id="align2"><span class="ico">⛓</span><span><b>AI Align</b><small>Sync timing & phrasing</small></span><u>›</u></button><button id="detect"><span class="ico">♫</span><span><b>Detect Key</b><small>Auto-detect key & scale</small></span><u>›</u></button><button id="natural"><span class="ico">〰</span><span><b>Naturalize Vibrato</b><small>Keep it human</small></span><u>›</u></button><button id="formant"><span class="ico">⬡</span><span><b>Formant Protect</b><small>Preserve vocal character</small></span><u>›</u></button></div></aside>
-</div><footer class="foot"><b>MORE HUMAN MUSIC.</b><span>VOX FREAK AI · AI-FIRST VOCAL WORKSTATION</span><em>Same voice. Brighter tomorrow.</em></footer></div>
+<aside class="left glass">
+  <div class="title"><span>TRACKS</span><button class="mini" id="add">＋</button></div><input id="file" type="file" accept="audio/*" multiple hidden>
+  <div class="tracks" id="tracks">
+    <div class="track active" data-track="0"><span class="dot" style="background:#ff39d7;color:#ff39d7"></span><div><b>Lead Master</b><small id="masterSub">Lead Vocals</small></div><div class="ms"><span>M</span><span>S</span></div></div>
+    <div class="track" data-track="1"><span class="dot" style="background:#39e7ff;color:#39e7ff"></span><div><b>Double L</b><small>Vocal Double</small></div><div class="ms"><span>M</span><span>S</span></div></div>
+    <div class="track" data-track="2"><span class="dot" style="background:#a855f7;color:#a855f7"></span><div><b>Double R</b><small>Vocal Double</small></div><div class="ms"><span>M</span><span>S</span></div></div>
+    <div class="track" data-track="3"><span class="dot" style="background:#76ff3c;color:#76ff3c"></span><div><b>Harmony 1</b><small>Harmony</small></div><div class="ms"><span>M</span><span>S</span></div></div>
+    <div class="track" data-track="4"><span class="dot" style="background:#ff9f43;color:#ff9f43"></span><div><b>Harmony 2</b><small>Harmony</small></div><div class="ms"><span>M</span><span>S</span></div></div>
+  </div>
+  <button class="import" id="import">＋ Add Vocal Track</button>
+  <section class="card"><h3>GLOBAL TUNING</h3><div class="row"><span>Key</span><b class="pill" id="key">A Minor</b></div><div class="row"><span>Scale</span><b class="pill" id="scale">Natural Minor</b></div><div class="row"><span>Reference</span><b class="pill">440 Hz</b></div></section>
+  <section class="card meters"><h3>REAL-TIME METERS</h3><div class="row"><span>Input</span><span id="inDb">-∞ dB</span></div><div class="meter"><i id="inMeter"></i></div><div class="row"><span>Output</span><span id="outDb">-∞ dB</span></div><div class="meter"><i id="outMeter" style="width:0%"></i></div><div class="row"><span>Pitch Deviation</span><span id="devText">0¢</span></div><div class="deviation"><i id="devNeedle"></i></div></section>
+  <div class="tag">〰 BETTER VOCALS.<br>  A BRIGHTER TOMORROW.</div>
+</aside>
+<main class="main">
+  <section class="overview glass"><canvas id="overview"></canvas><div class="meta"><small id="filename">No audio loaded</small><b><span id="now">0:00.0</span> / <span id="total">0:00.0</span></b><small id="viewportLabel">Timeline · 8.0s window</small></div></section>
+  <section class="editor glass">
+    <div class="editorhead">
+      <div><i class="pink"></i><b>LEAD MASTER</b><small id="notes">0 notes</small><small class="modehint" id="modeHint">Drag notes vertically to tune</small></div>
+      <div class="edittools"><button class="tool" id="undo" title="Undo">↶</button><button class="tool" id="redo" title="Redo">↷</button><button class="tool active" id="pointer" title="Select / move">↖</button><button class="tool" id="pitchTool" title="Pitch tool">⌁</button><button class="tool" id="splitTool" title="Split note">✂</button><span>Snap <b id="snapLabel">1/16</b></span><span>View <b>Pitch</b></span><button class="tool" id="zoomOut">−</button><button class="tool" id="zoomIn">＋</button></div>
+    </div>
+    <div class="pitchwrap"><canvas id="pitch"></canvas><div class="noteTooltip" id="noteTooltip"></div><button class="drop" id="drop"><strong>⇧</strong><h2>Drop a lead vocal here</h2><p>WAV / MP3 / browser-supported audio</p><span>IMPORT VOCAL</span></button></div>
+  </section>
+  <section class="alignment glass"><div class="alignhead"><b>VOCAL ALIGNMENT</b><div><button id="linkAll">⛓ Link All</button><button id="align">✦ Auto Align</button></div></div><div id="alignrows"></div></section>
+  <section class="transport glass">
+    <div class="tb"><button id="reset" title="Return to start">|◀</button><button class="play" id="play">▶</button><button id="stop">■</button><button id="loop" title="Loop">↻</button></div>
+    <div class="time"><b><span id="now2">0:00.0</span> / <span id="total2">0:00.0</span></b><small>BPM 120 · 4/4</small></div>
+    <div class="macros"><label>Tune<input id="strength" type="range" min="0" max="100" value="75"><b>75%</b></label><label>Humanize<input id="humanize" type="range" min="0" max="100" value="30"><b>30%</b></label><label>Vibrato<input id="vibrato" type="range" min="0" max="100" value="50"><b>50%</b></label><label>Formant<input id="formantMacro" type="range" min="-12" max="12" value="0"><b>0</b></label></div>
+    <div class="presets"><small>PRESETS</small><div class="presetgrid"><button data-p="Natural Vocal">〰<span>Natural Vocal</span></button><button data-p="Pop Tight" class="selected">⌁<span>Pop Tight</span></button><button data-p="Trap Glide">〽<span>Trap Glide</span></button><button data-p="Choir Align">♬<span>Choir Align</span></button><button data-p="Transparent Fix">≈<span>Transparent Fix</span></button></div></div>
+  </section>
+</main>
+<aside class="right glass">
+  <div class="aihead"><b>◎ AI ASSISTANT</b><span class="online"><i></i>Online</span></div>
+  <div class="hero"><h2>Let AI do the heavy lifting.</h2><p>You keep the soul.</p></div>
+  <div class="tabs"><b>SUGGESTIONS</b><span>CONTROLS</span><span>ANALYSIS</span></div>
+  <div class="analysis"><b>✦ AI analysis</b><small id="status">Ready for a vocal.</small></div>
+  <div class="insights" id="insights"><div class="insight"><i></i><div><b>Key detected: A Minor</b><small>92% tonal confidence.</small></div></div><div class="insight"><i></i><div><b>Vibrato is natural</b><small>Preserve expressive modulation.</small></div></div></div>
+  <div class="actions"><button id="tune"><span class="ico">✦</span><span><b>AI Tune</b><small>Smart pitch correction</small></span><u>›</u></button><button id="align2"><span class="ico">⛓</span><span><b>AI Align</b><small>Sync timing & phrasing</small></span><u>›</u></button><button id="detect"><span class="ico">♫</span><span><b>Detect Key</b><small>Auto-detect key & scale</small></span><u>›</u></button><button id="natural"><span class="ico">〰</span><span><b>Naturalize Vibrato</b><small>Keep it human</small></span><u>›</u></button><button id="formant"><span class="ico">⬡</span><span><b>Formant Protect</b><small>Preserve vocal character</small></span><u>›</u></button><button id="harmony"><span class="ico">♬</span><span><b>Harmony Assist</b><small>Create & tune harmonies</small></span><u>›</u></button></div>
+</aside>
+</div>
+<footer class="foot"><b>MORE HUMAN MUSIC.</b><span>VOX FREAK AI · AI-FIRST VOCAL WORKSTATION</span><em>Same voice. Brighter tomorrow.</em></footer>
+</div></div>
 <script src="site.js"></script>
 </body></html>
