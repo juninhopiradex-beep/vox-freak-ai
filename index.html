@@ -27,10 +27,10 @@
   <div class="tag">〰 BETTER VOCALS.<br>  A BRIGHTER TOMORROW.</div>
 </aside>
 <main class="main">
-  <section class="overview glass"><canvas id="overview"></canvas><div class="meta"><small id="filename">No audio loaded</small><b><span id="now">0:00.0</span> / <span id="total">0:00.0</span></b><small id="viewportLabel">Timeline · 8.0s window</small></div></section>
+  <section class="overview glass"><canvas id="overview"></canvas><div class="meta"><small id="filename">No audio loaded</small><b><span id="now">0:00.0</span> / <span id="total">0:00.0</span></b><small id="viewportLabel">Timeline · 9.0s window</small></div></section>
   <section class="editor glass">
     <div class="editorhead">
-      <div><i class="pink"></i><b>LEAD MASTER</b><small id="notes">0 notes</small><small class="modehint" id="modeHint">Drag = pitch + time · edges resize</small></div>
+      <div><i class="pink"></i><b>LEAD MASTER</b><small id="notes">0 notes</small><small class="modehint" id="modeHint">Drag blob = pitch + time · edges resize</small></div>
       <div class="edittools"><button class="tool" id="undo" title="Undo">↶</button><button class="tool" id="redo" title="Redo">↷</button><button class="tool active" id="pointer" title="Move note">↖</button><button class="tool" id="pitchTool" title="Pitch only">⌁</button><button class="tool" id="splitTool" title="Split note">✂</button><button class="segbtn active" id="snapBtn">Snap <b id="snapLabel">1/16</b></button><button class="segbtn" id="viewBtn">View <b id="viewLabel">Pitch</b></button><button class="tool" id="zoomOut" title="Zoom out">−</button><button class="tool" id="zoomIn" title="Zoom in">＋</button></div>
     </div>
     <div class="pitchwrap"><canvas id="pitch"></canvas><div class="noteTooltip" id="noteTooltip"></div><button class="drop" id="drop"><strong>⇧</strong><h2>Drop a lead vocal here</h2><p>WAV / MP3 / browser-supported audio</p><span>IMPORT VOCAL</span></button></div>
@@ -39,7 +39,7 @@
   <section class="transport glass">
     <div class="tb"><button id="reset" title="Return to start">|◀</button><button class="play" id="play" title="Play / Pause">▶</button><button id="stop" title="Stop">■</button><button id="loop" title="Loop visible window">↻</button></div>
     <div class="time"><b><span id="now2">0:00.0</span> / <span id="total2">0:00.0</span></b><small>BPM 120 · 4/4</small></div>
-    <div class="macros"><label>Tune<input id="strength" type="range" min="0" max="100" value="75"><b>75%</b></label><label>Humanize<input id="humanize" type="range" min="0" max="100" value="30"><b>30%</b></label><label>Vibrato<input id="vibrato" type="range" min="0" max="100" value="50"><b>50%</b></label><label>Formant<input id="formantMacro" type="range" min="-12" max="12" value="0"><b>0</b></label></div>
+    <div class="macros"><label>Tune<input id="strength" type="range" min="0" max="100" value="78"><b>78%</b></label><label>Humanize<input id="humanize" type="range" min="0" max="100" value="46"><b>46%</b></label><label>Vibrato<input id="vibrato" type="range" min="0" max="100" value="62"><b>62%</b></label><label>Formant<input id="formantMacro" type="range" min="-12" max="12" value="0"><b>0</b></label></div>
     <div class="presets"><small>PRESETS</small><div class="presetgrid"><button data-p="Natural Vocal">〰<span>Natural Vocal</span></button><button data-p="Pop Tight" class="selected">⌁<span>Pop Tight</span></button><button data-p="Trap Glide">〽<span>Trap Glide</span></button><button data-p="Choir Align">♬<span>Choir Align</span></button><button data-p="Transparent Fix">≈<span>Transparent Fix</span></button></div></div>
   </section>
 </main>
@@ -52,7 +52,7 @@
   <div class="actions"><button id="tune"><span class="ico">✦</span><span><b>AI Tune</b><small>Smart pitch correction</small></span><u>›</u></button><button id="align2"><span class="ico">⛓</span><span><b>AI Align</b><small>Sync timing & phrasing</small></span><u>›</u></button><button id="detect"><span class="ico">♫</span><span><b>Detect Key</b><small>Auto-detect key & scale</small></span><u>›</u></button><button id="natural"><span class="ico">〰</span><span><b>Naturalize Vibrato</b><small>Keep it human</small></span><u>›</u></button><button id="formant"><span class="ico">⬡</span><span><b>Formant Protect</b><small>Preserve vocal character</small></span><u>›</u></button><button id="harmony"><span class="ico">♬</span><span><b>Harmony Assist</b><small>Create & tune harmonies</small></span><u>›</u></button></div>
 </aside>
 </div>
-<footer class="foot"><b>MORE HUMAN MUSIC.</b><span>VOX FREAK AI · AI-FIRST VOCAL WORKSTATION</span><em>Same voice. Brighter tomorrow.</em></footer>
+<footer class="foot"><b>MORE HUMAN MUSIC.</b><span>VOX FREAK AI · ORGANIC PITCH EDITOR</span><em>Same voice. Brighter tomorrow.</em></footer>
 </div></div>
-<script src="site.js"></script>
+<script src="site-v2.js"></script>
 </body></html>
